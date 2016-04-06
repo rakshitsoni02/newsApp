@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">AndroidBoilerPlate</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="dialog_action_ok">OK</string>
+    <string name="dialog_action_cancel">Cancel</string>
+    <string name="dialog_error_title">Sorry</string>
+
+    <string name="empty_ribots">There aren\'t any ribots</string>
+    <string name="error_loading_ribots">There was a problem loading the ribots</string>
+
+
+
+    <string name="electronics">CLASSIFIED</string>
+    <string name="furniture">JOBS</string>
+    <string name="activity">HOME</string>
+    <string name="settings">SETTINGS</string>
+    <string name="ajab_gajab">Ajab Gajab News</string>
+    <string name="desh">Desh</string>
+    <string name="videsh">Videsh</string>
+    <string name="rashifal">Rashifal</string>
+    <string name="health_tips">Health Tips</string>
+    k<string name="election_keeda">Election Keeda</string>
+</resources>
