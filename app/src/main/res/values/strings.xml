@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidBoilerPlate</string>
+    <string name="app_name">Global Herald</string>
 
     <string name="action_settings">Settings</string>
 
@@ -22,4 +22,5 @@
     <string name="rashifal">Rashifal</string>
     <string name="health_tips">Health Tips</string>
     k<string name="election_keeda">Election Keeda</string>
+    k<string name="new_image">Select News Image</string>
 </resources>

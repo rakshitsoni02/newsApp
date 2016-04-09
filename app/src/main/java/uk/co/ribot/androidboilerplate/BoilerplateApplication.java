@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
 
+import com.thefinestartist.Base;
+
 import timber.log.Timber;
 import uk.co.ribot.androidboilerplate.data.Preference;
 import uk.co.ribot.androidboilerplate.injection.component.ApplicationComponent;
@@ -19,11 +21,13 @@ public class BoilerplateApplication extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+    Base.initialize(this);
     if (BuildConfig.DEBUG) {
       Timber.plant(new Timber.DebugTree());
 //            Fabric.with(this, new Crashlytics());
     }
      initTypefaceAndPreference();
+
   }
 
   private void initTypefaceAndPreference() {

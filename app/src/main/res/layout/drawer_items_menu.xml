@@ -72,8 +72,23 @@
                 android:text="@string/furniture"/>
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/upload_news_group"
+            style="@style/LinearLayout.GuillotineItem">
+
+            <ImageView
+                style="@style/ImageView.GuillotineItem"
+                android:src="@drawable/ic_upload_news"/>
+
+            <uk.co.ribot.androidboilerplate.views.FontTextView
+                android:id="@+id/upload_news_tittle"
+                style="@style/TextView.GuillotineItem"
+                android:text="Upload News"/>
+        </LinearLayout>
+
 
         <LinearLayout
+            android:id="@+id/contactus_group"
             style="@style/LinearLayout.GuillotineItem">
 
             <ImageView
@@ -83,7 +98,7 @@
             <uk.co.ribot.androidboilerplate.views.FontTextView
                 android:id="@+id/epaper_tittle"
                 style="@style/TextView.GuillotineItem"
-                android:text="E-PAPER"/>
+                android:text="Contact Us"/>
         </LinearLayout>
 
 

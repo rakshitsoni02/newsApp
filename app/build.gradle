@@ -10,7 +10,7 @@ android {
     buildToolsVersion '23.0.3'
 
     defaultConfig {
-        applicationId 'uk.co.ribot.androidboilerplate'
+        applicationId 'com.ghn.android'
         minSdkVersion 16
         targetSdkVersion 23
         testInstrumentationRunner "${applicationId}.runner.RxAndroidJUnitRunner"
@@ -79,10 +79,13 @@ play {
 }
 repositories {
     maven { url "https://jitpack.io" }
+    maven {
+        url "https://repo.commonsware.com.s3.amazonaws.com"
+    }
 }
 dependencies {
     final PLAY_SERVICES_VERSION = '8.4.0'
-    final SUPPORT_LIBRARY_VERSION = '23.1.1'
+    final SUPPORT_LIBRARY_VERSION = '23.2.1'
     final RETROFIT_VERSION = '2.0.0-beta3'
     final DAGGER_VERSION = '2.0.2'
     final DEXMAKER_VERSION = '1.4'
@@ -117,6 +120,7 @@ dependencies {
         exclude group: 'com.android.support', module: 'appcompat'
         exclude group: 'com.android.support', module: 'support-v4'
         exclude group: 'com.android.support', module: 'recyclerview-v7'
+        exclude module: 'support-annotations'
     }
     androidTestCompile "com.android.support.test.espresso:espresso-core:$ESPRESSO_VERSION"
     androidTestCompile "com.android.support.test:runner:$RUNNER_VERSION"
@@ -147,6 +151,9 @@ dependencies {
     compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
     compile 'com.squareup.okhttp3:okhttp:3.2.0'
     compile project(':library')
+    compile 'com.thefinestartist:finestwebview:1.2.3'
+    compile 'com.thefinestartist:ytpa:1.2.1'
+    compile 'com.github.jaydeepw:poly-picker:v1.0.22'
 }
 
 // Log out test news to console

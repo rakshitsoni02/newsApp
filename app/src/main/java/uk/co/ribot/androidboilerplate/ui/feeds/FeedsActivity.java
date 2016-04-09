@@ -1,12 +1,17 @@
 package uk.co.ribot.androidboilerplate.ui.feeds;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -15,6 +20,10 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.youtube.player.YouTubePlayer;
+import com.thefinestartist.finestwebview.FinestWebView;
+import com.thefinestartist.ytpa.YouTubePlayerActivity;
+import com.thefinestartist.ytpa.enums.Orientation;
 import com.thoughtw.retail.animation.GuillotineAnimation;
 
 import java.util.ArrayList;
@@ -24,6 +33,8 @@ import javax.inject.Inject;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import nl.changer.polypicker.Config;
+import nl.changer.polypicker.ImagePickerActivity;
 import uk.co.ribot.androidboilerplate.BoilerplateApplication;
 import uk.co.ribot.androidboilerplate.R;
 import uk.co.ribot.androidboilerplate.data.SyncService;
@@ -41,6 +52,8 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
       "uk.co.ribot.androidboilerplate.ui.main.MainActivity.EXTRA_TRIGGER_SYNC_FLAG";
   @Bind(R.id.toolBarMenu)
   Toolbar toolBarMenu;
+  @Bind(R.id.epaper)
+  ImageView ivEpaper;
   @Inject
   FeedsPresenter mMainPresenter;
   List<Fragment> fragments;
@@ -67,8 +80,9 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
   private ArrayList<News> listAllContent;
   private FeedsAdapter feedsAdapter;
   private FontTextView tvMoreItem;
-  private LinearLayout ajab_gajab_group, desh_group, videsh_group, rashifal_group, health_tips_group, election_keeda_group;
+  //  private LinearLayout ajab_gajab_group, desh_group, videsh_group, rashifal_group, health_tips_group, election_keeda_group;
   private ImageView ivMoreItem;
+  private static final int INTENT_REQUEST_GET_IMAGES = 13;
 
   /**
    * Return an Intent to start this Activity.
@@ -86,6 +100,7 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main_cards);
     ButterKnife.bind(this);
+    ivEpaper.setOnClickListener(this);
     if (getIntent().getBooleanExtra(EXTRA_TRIGGER_SYNC_FLAG, true)) {
       startService(SyncService.getStartIntent(this));
     }
@@ -167,6 +182,14 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
     guillotineMenu.findViewById(R.id.activity_group).setOnClickListener(this);
     guillotineMenu.findViewById(R.id.electronic_group).setOnClickListener(this);
     guillotineMenu.findViewById(R.id.furniture_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.ajab_gajab_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.desh_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.videsh_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.rashifal_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.health_tips_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.election_keeda_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.contactus_group).setOnClickListener(this);
+    guillotineMenu.findViewById(R.id.upload_news_group).setOnClickListener(this);
   }
 
   @Override
@@ -187,7 +210,125 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
         if (listAllContent != null)
           setJobs();
         break;
+      case R.id.ajab_gajab_group:
+        updateItemSelection(furnitureIcon, furnitureTittle, R.drawable.ic_action_furniture_active, getResources().getString(R.string.ajab_gajab));
+        if (listAllContent != null)
+          setSelectedCategory("1");
+        break;
+      case R.id.desh_group:
+        updateItemSelection(furnitureIcon, furnitureTittle, R.drawable.ic_action_furniture_active, getResources().getString(R.string.desh));
+        if (listAllContent != null)
+          setSelectedCategory("2");
+        break;
+      case R.id.videsh_group:
+        updateItemSelection(furnitureIcon, furnitureTittle, R.drawable.ic_action_furniture_active, getResources().getString(R.string.videsh));
+        if (listAllContent != null)
+          setSelectedCategory("3");
+        break;
+      case R.id.rashifal_group:
+        updateItemSelection(furnitureIcon, furnitureTittle, R.drawable.ic_action_furniture_active, getResources().getString(R.string.rashifal));
+        if (listAllContent != null)
+          setSelectedCategory("4");
+        break;
+      case R.id.health_tips_group:
+        updateItemSelection(furnitureIcon, furnitureTittle, R.drawable.ic_action_furniture_active, getResources().getString(R.string.health_tips));
+        if (listAllContent != null)
+          setSelectedCategory("5");
+        break;
+      case R.id.epaper:
+        new FinestWebView.Builder(getApplicationContext()).webViewBuiltInZoomControls(true).webViewDisplayZoomControls(true).webViewSupportZoom(true).show("http://globalherald.in/national-herald/");
+        break;
+      case R.id.election_keeda_group:
+        if (listAllContent != null)
+          setSelectedCategory("6");
+        break;
+      case R.id.contactus_group:
+        showContactUSDialog();
+        break;
+      case R.id.upload_news_group:
+        getImages();
+        break;
     }
+  }
+
+  private void getImages() {
+    Intent intent = new Intent(this, ImagePickerActivity.class);
+    Config config = new Config.Builder()
+        .setTabBackgroundColor(R.color.primary)    // set tab background color. Default white.
+        .setTabSelectionIndicatorColor(R.color.white)
+        .setCameraButtonColor(R.color.finestWhite)
+        .setSelectionLimit(1)    // set photo selection limit. Default unlimited selection.
+        .build();
+    ImagePickerActivity.setConfig(config);
+    startActivityForResult(intent, INTENT_REQUEST_GET_IMAGES);
+  }
+
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+    super.onActivityResult(requestCode, resultCode, intent);
+
+    if (resultCode == Activity.RESULT_OK) {
+      if (requestCode == INTENT_REQUEST_GET_IMAGES) {
+        Parcelable[] parcelableUris = intent.getParcelableArrayExtra(ImagePickerActivity.EXTRA_IMAGE_URIS);
+
+        if (parcelableUris == null) {
+          return;
+        }
+
+        // Java doesn't allow array casting, this is a little hack
+        Uri[] uris = new Uri[parcelableUris.length];
+        System.arraycopy(parcelableUris, 0, uris, 0, parcelableUris.length);
+
+        if (uris != null) {
+          for (Uri uri : uris) {
+            Log.i("images", " uri: " + uri);
+
+          }
+
+        }
+      }
+    }
+  }
+
+  private void showContactUSDialog() {
+    final AlertDialog.Builder builder =
+        new AlertDialog.Builder(this);
+    View dialogView = LayoutInflater.from(this).inflate(R.layout.custom_dialog_contactus, null);
+    builder.setView(dialogView);
+    final AlertDialog dialog = builder.show();
+    dialogView.findViewById(R.id.dismiss).setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View v) {
+        dialog.dismiss();
+      }
+    });
+  }
+
+  private void startYoutubeVideo() {
+    Intent intent = new Intent(FeedsActivity.this, YouTubePlayerActivity.class);
+// Youtube video ID (Required, You can use YouTubeUrlParser to parse Video Id from url)
+    intent.putExtra(YouTubePlayerActivity.EXTRA_VIDEO_ID, "iS1g8G_njx8");
+
+// Youtube player style (DEFAULT as default)
+    intent.putExtra(YouTubePlayerActivity.EXTRA_PLAYER_STYLE, YouTubePlayer.PlayerStyle.DEFAULT);
+
+// Screen Orientation Setting (AUTO for default)
+// AUTO, AUTO_START_WITH_LANDSCAPE, ONLY_LANDSCAPE, ONLY_PORTRAIT
+    intent.putExtra(YouTubePlayerActivity.EXTRA_ORIENTATION, Orientation.AUTO);
+
+// Show audio interface when user adjust volume (true for default)
+    intent.putExtra(YouTubePlayerActivity.EXTRA_SHOW_AUDIO_UI, true);
+
+// If the video is not playable, use Youtube app or Internet Browser to play it
+// (true for default)
+    intent.putExtra(YouTubePlayerActivity.EXTRA_HANDLE_ERROR, true);
+
+// Animation when closing youtubeplayeractivity (none for default)
+    intent.putExtra(YouTubePlayerActivity.EXTRA_ANIM_ENTER, R.anim.fade_in);
+    intent.putExtra(YouTubePlayerActivity.EXTRA_ANIM_EXIT, R.anim.fade_out);
+
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    startActivity(intent);
   }
 
   private void updateItemSelection(ImageView activeImage, FontTextView activeTittle, int icon, String toolBarTittle) {
@@ -236,6 +377,18 @@ public class FeedsActivity extends BaseActivity implements FeedsMvpView, View.On
     for (int i = 0; i < listAllContent.size(); i++) {
       News news = listAllContent.get(i);
       if (news.getContent_type().equals("2")) {
+        fragments.add(ContentFragment.newInstance(news, i));
+      }
+    }
+    feedsAdapter.notifyDataSetChanged();
+  }
+
+  private void setSelectedCategory(String categoryType) {
+    removeFragmentsFromPager();
+    for (int i = 0; i < listAllContent.size(); i++) {
+      News news = listAllContent.get(i);
+
+      if (news.getCategory_id() != null && news.getCategory_id().equals(categoryType)) {
         fragments.add(ContentFragment.newInstance(news, i));
       }
     }

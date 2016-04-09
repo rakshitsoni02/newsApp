@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <uk.co.ribot.androidboilerplate.views.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="\nPress Office:\n1-A, Firoz Gandhi Press Complex\nA.B. Road, Indore, (M.P.)"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"/>
+
+    <uk.co.ribot.androidboilerplate.views.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="+91-9977200123"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"/>
+
+    <uk.co.ribot.androidboilerplate.views.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="(0731)-2554927\n"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"/>
+
+    <uk.co.ribot.androidboilerplate.views.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="City Office:\n405, Rajani Bhawan,\nM.G. Road, Indore (M.P.)"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"/>
+
+    <uk.co.ribot.androidboilerplate.views.FontTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0731-3074509\n"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"/>
+
+    <Button
+        android:id="@+id/dismiss"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:text="OK"
+        android:textColor="@color/finestWhite"/>
+</LinearLayout>

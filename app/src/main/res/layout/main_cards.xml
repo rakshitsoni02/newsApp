@@ -44,6 +44,12 @@
                 android:textColor="@color/icons_text"
                 android:textSize="20sp"/>
 
+            <ImageView
+                android:id="@+id/epaper"
+                style="@style/ImageView.Hamburger"
+                android:layout_gravity="end"
+                android:src="@drawable/ic_epaper"/>
+
         </android.support.v7.widget.Toolbar>
 
         <ProgressBar

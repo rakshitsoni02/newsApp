@@ -10,6 +10,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
         <item name="android:background">@color/primary</item>
     </style>
 
@@ -48,4 +49,7 @@
     <style name="TextView.GuillotineItem.Selected">
         <item name="android:textColor">@color/selected_item_color</item>
     </style>
+
+
+
 </resources>
