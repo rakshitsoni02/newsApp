@@ -14,9 +14,9 @@ android {
         minSdkVersion 16
         targetSdkVersion 23
         testInstrumentationRunner "${applicationId}.runner.RxAndroidJUnitRunner"
-        versionCode 1000
+        versionCode 2
         // Major -> Millions, Minor -> Thousands, Bugfix -> Hundreds. E.g 1.3.72 == 1,003,072
-        versionName '0.1.0'
+        versionName '1.1'
     }
 
     signingConfigs {
@@ -42,7 +42,7 @@ android {
         release {
             signingConfig signingConfigs.release
 
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
 
             ext.betaDistributionReleaseNotesFilePath =
@@ -145,7 +145,7 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.1.0'
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.jakewharton.timber:timber:4.1.0'
+  //  compile 'com.jakewharton.timber:timber:4.1.0'
     compile 'com.github.wenchaojiang:AndroidSwipeableCardStack:0.1.4'
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
@@ -154,11 +154,15 @@ dependencies {
     compile 'com.thefinestartist:finestwebview:1.2.3'
     compile 'com.thefinestartist:ytpa:1.2.1'
     compile 'com.github.jaydeepw:poly-picker:v1.0.22'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.7@aar') {
+        transitive = true
+    }
+    compile 'com.github.johnpersano:supertoasts:1.3.4@aar'
 }
 
 // Log out test news to console
 tasks.matching { it instanceof Test }.all {
     testLogging.events = ["failed", "passed", "skipped"]
 }
-
+apply plugin: 'com.google.gms.google-services'
 

@@ -25,9 +25,9 @@
             android:id="@+id/toolBarMenu"
             style="@style/Toolbar"
             android:layout_alignParentTop="true"
+            android:animateLayoutChanges="true"
             app:contentInsetStart="0dp"
             app:layout_scrollFlags="scroll|enterAlways"
-            android:animateLayoutChanges="true"
             >
 
             <ImageView
@@ -35,7 +35,7 @@
                 style="@style/ImageView.Hamburger"
                 android:src="@drawable/ic_menu_90"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/tittle_fragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -43,6 +43,12 @@
                 android:text="HOME"
                 android:textColor="@color/icons_text"
                 android:textSize="20sp"/>
+
+            <ImageView
+                android:id="@+id/refresh"
+                style="@style/ImageView.Hamburger"
+                android:layout_gravity="end"
+                android:src="@drawable/icon_dark_refresh"/>
 
             <ImageView
                 android:id="@+id/epaper"
@@ -60,7 +66,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"/>
 
-        <uk.co.ribot.androidboilerplate.views.VerticalViewPager
+        <com.ghn.android.views.VerticalViewPager
             android:id="@+id/vertical_viewpager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

@@ -35,7 +35,7 @@
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_action_house_active"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/home_tittle"
                 style="@style/TextView.GuillotineItem.Selected"
                 android:text="@string/activity"/>
@@ -51,7 +51,7 @@
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_action_ads"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/elec_tittle"
                 style="@style/TextView.GuillotineItem"
                 android:text="@string/electronics"/>
@@ -66,7 +66,7 @@
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_action_jobs"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/furniture_tittle"
                 style="@style/TextView.GuillotineItem"
                 android:text="@string/furniture"/>
@@ -80,7 +80,7 @@
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_upload_news"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/upload_news_tittle"
                 style="@style/TextView.GuillotineItem"
                 android:text="Upload News"/>
@@ -95,7 +95,7 @@
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_action_furniture"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 android:id="@+id/epaper_tittle"
                 style="@style/TextView.GuillotineItem"
                 android:text="Contact Us"/>
@@ -104,13 +104,14 @@
 
         <LinearLayout
             android:id="@+id/settings_group"
-            style="@style/LinearLayout.GuillotineItem">
+            style="@style/LinearLayout.GuillotineItem"
+            android:visibility="gone">
 
             <ImageView
                 style="@style/ImageView.GuillotineItem"
                 android:src="@drawable/ic_action_gear"/>
 
-            <uk.co.ribot.androidboilerplate.views.FontTextView
+            <com.ghn.android.views.FontTextView
                 style="@style/TextView.GuillotineItem"
                 android:text="@string/settings"/>
         </LinearLayout>
@@ -119,7 +120,7 @@
             android:id="@+id/more_root"
             style="@style/LinearLayout.GuillotineItem">
 
-            <uk.co.ribot.androidboilerplate.views.ExpandablePanel
+            <com.ghn.android.views.ExpandablePanel
                 android:id="@+id/expadable_panel"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -147,7 +148,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/ajab_gajab_group_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/ajab_gajab"/>
@@ -162,7 +163,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/desh_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/desh"/>
@@ -177,7 +178,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/videsh_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/videsh"/>
@@ -192,7 +193,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/rashifal_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/rashifal"/>
@@ -207,7 +208,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/health_tips_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/health_tips"/>
@@ -222,7 +223,7 @@
                                 style="@style/ImageView.GuillotineItem"
                                 android:src="@drawable/ic_action_plug"/>
 
-                            <uk.co.ribot.androidboilerplate.views.FontTextView
+                            <com.ghn.android.views.FontTextView
                                 android:id="@+id/election_keeda_tittle"
                                 style="@style/TextView.GuillotineItem"
                                 android:text="@string/election_keeda"/>
@@ -239,13 +240,13 @@
                             style="@style/ImageView.GuillotineItem"
                             android:src="@drawable/ic_action_more"/>
 
-                        <uk.co.ribot.androidboilerplate.views.FontTextView
+                        <com.ghn.android.views.FontTextView
                             android:id="@+id/more_text"
                             style="@style/TextView.GuillotineItem"
                             android:text="MORE"/>
                     </LinearLayout>
                 </RelativeLayout>
-            </uk.co.ribot.androidboilerplate.views.ExpandablePanel>
+            </com.ghn.android.views.ExpandablePanel>
         </LinearLayout>
     </LinearLayout>
 

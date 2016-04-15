@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate;
+package com.ghn.android;
 
 import android.database.Cursor;
 
@@ -13,12 +13,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import rx.observers.TestSubscriber;
-import uk.co.ribot.androidboilerplate.data.local.DatabaseHelper;
-import uk.co.ribot.androidboilerplate.data.local.Db;
-import uk.co.ribot.androidboilerplate.data.local.DbOpenHelper;
-import uk.co.ribot.androidboilerplate.data.model.Ribot;
-import uk.co.ribot.androidboilerplate.test.common.TestDataFactory;
-import uk.co.ribot.androidboilerplate.util.DefaultConfig;
+import com.ghn.android.data.local.DatabaseHelper;
+import com.ghn.android.data.local.Db;
+import com.ghn.android.data.local.DbOpenHelper;
+import com.ghn.android.data.model.Ribot;
+import com.ghn.android.test.common.TestDataFactory;
+import com.ghn.android.util.DefaultConfig;
 
 import static junit.framework.Assert.assertEquals;
 

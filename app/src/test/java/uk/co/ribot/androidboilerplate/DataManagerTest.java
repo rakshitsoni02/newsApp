@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate;
+package com.ghn.android;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,13 +11,13 @@ import java.util.List;
 
 import rx.Observable;
 import rx.observers.TestSubscriber;
-import uk.co.ribot.androidboilerplate.data.DataManager;
-import uk.co.ribot.androidboilerplate.data.local.DatabaseHelper;
-import uk.co.ribot.androidboilerplate.data.local.PreferencesHelper;
-import uk.co.ribot.androidboilerplate.data.model.Ribot;
-import uk.co.ribot.androidboilerplate.data.remote.RibotsService;
-import uk.co.ribot.androidboilerplate.test.common.TestDataFactory;
-import uk.co.ribot.androidboilerplate.util.EventPosterHelper;
+import com.ghn.android.data.DataManager;
+import com.ghn.android.data.local.DatabaseHelper;
+import com.ghn.android.data.local.PreferencesHelper;
+import com.ghn.android.data.model.Ribot;
+import com.ghn.android.data.remote.RibotsService;
+import com.ghn.android.test.common.TestDataFactory;
+import com.ghn.android.util.EventPosterHelper;
 
 import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.never;

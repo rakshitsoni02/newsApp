@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate.util;
+package com.ghn.android.util;
 
 /**
  * Robolectric default config properties

@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate;
+package com.ghn.android;
 
 import org.junit.After;
 import org.junit.Before;
@@ -12,12 +12,12 @@ import java.util.Collections;
 import java.util.List;
 
 import rx.Observable;
-import uk.co.ribot.androidboilerplate.data.DataManager;
-import uk.co.ribot.androidboilerplate.data.model.Ribot;
-import uk.co.ribot.androidboilerplate.test.common.TestDataFactory;
-import uk.co.ribot.androidboilerplate.ui.main.MainMvpView;
-import uk.co.ribot.androidboilerplate.ui.main.MainPresenter;
-import uk.co.ribot.androidboilerplate.util.RxSchedulersOverrideRule;
+import com.ghn.android.data.DataManager;
+import com.ghn.android.data.model.Ribot;
+import com.ghn.android.test.common.TestDataFactory;
+import com.ghn.android.ui.main.MainMvpView;
+import com.ghn.android.ui.main.MainPresenter;
+import com.ghn.android.util.RxSchedulersOverrideRule;
 
 import static org.mockito.Matchers.anyListOf;
 import static org.mockito.Mockito.doReturn;
