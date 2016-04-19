@@ -39,7 +39,7 @@
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
                 android:text="Apple Music now has its own Android widget"
-                android:textColor="@color/text_primary"
+                android:textColor="@color/dark_black"
                 android:textSize="@dimen/text_large_body"
                 />
 
@@ -49,7 +49,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:autoLink="web"
+                android:maxLines="5.5"
                 android:padding="8dp"
+                android:scrollbars="vertical"
                 android:text=" Share on Facebook  Tweet  Share  Pin
 Home screen widgets still don't exist on iOS, but that's not stopping Apple from taking advantage of Android's unique strengths. Today the company updated its Apple Music app with a new widget that can be dropped onto your phone or tablet's home screen. It's pretty basic (most music app widgets are, to be fair), offering controls for pause, skip, and going back to the last track."
                 android:textColor="@color/text_secondry"
@@ -108,11 +110,11 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginBottom="2dp"
-                android:paddingLeft="8dp"
                 android:layout_toRightOf="@id/video_youtube"
                 android:drawableLeft="@drawable/ic_readmore"
                 android:drawableStart="@drawable/ic_readmore"
                 android:gravity="center_vertical"
+                android:paddingLeft="8dp"
                 android:text="Read More"
                 android:textColor="@color/primary"
                 android:textSize="8sp"

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -112,6 +113,7 @@ public class ContentFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     final View view = inflater.inflate(R.layout.item_card_stack, container, false);
     ButterKnife.bind(this, view);
+    content_desc.setMovementMethod(new ScrollingMovementMethod());
     final News news = (News) getArguments().getSerializable("news");
     tittle_content.setText(news.getTitle());
     content_desc.setText(news.getDescription());

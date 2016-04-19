@@ -6,7 +6,8 @@
     <color name="black500">#9E9E9E</color>
     <color name="black700">#616161</color>
     <color name="accent">#82c5f2</color>
-    <color name="text_primary">#212121</color>
+    <!--<color name="text_primary">#212121</color>-->
+    <color name="text_primary">#FFFFFF</color>
     <color name="text_secondry">#727272</color>
     <color name="divider_color">#B6B6B6</color>
     <color name="icons_text">#FFFFFF</color>

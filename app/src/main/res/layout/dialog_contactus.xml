@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="\nPress Office:\n1-A, Firoz Gandhi Press Complex\nA.B. Road, Indore, (M.P.)"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/dark_black"
         android:textSize="14sp"/>
 
     <com.ghn.android.views.FontTextView
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="+91-9977200123"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/dark_black"
         android:textSize="14sp"/>
 
     <com.ghn.android.views.FontTextView
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="(0731)-2554927\n"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/dark_black"
         android:textSize="14sp"/>
 
     <com.ghn.android.views.FontTextView
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="City Office:\n405, Rajani Bhawan,\nM.G. Road, Indore (M.P.)"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/dark_black"
         android:textSize="14sp"/>
 
     <com.ghn.android.views.FontTextView
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="0731-3074509\n"
-        android:textColor="@color/text_primary"
+        android:textColor="@color/dark_black"
         android:textSize="14sp"/>
 
     <Button
