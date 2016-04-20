@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:autoLink="web"
-                android:maxLines="5.5"
+                android:maxLines="6"
                 android:padding="8dp"
                 android:scrollbars="vertical"
                 android:text=" Share on Facebook  Tweet  Share  Pin

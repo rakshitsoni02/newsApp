@@ -7,6 +7,7 @@
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondry</item>
     </style>
+
     <style name="Toolbar">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
@@ -23,7 +24,8 @@
             @dimen/abc_action_bar_overflow_padding_start_material
         </item>
     </style>
-    <style name="ImageView"/>
+
+    <style name="ImageView" />
 
     <style name="ImageView.GuillotineItem">
         <item name="android:layout_width">wrap_content</item>
@@ -31,14 +33,18 @@
         <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_marginLeft">100dp</item>
     </style>
-    <style name="LinearLayout"/>
+
+    <style name="LinearLayout" />
+
     <style name="LinearLayout.GuillotineItem">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_marginTop">@dimen/guillotine_small_margin</item>
     </style>
-    <style name="TextView"/>
+
+    <style name="TextView" />
+
     <style name="TextView.GuillotineItem">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -51,7 +57,6 @@
     <style name="TextView.GuillotineItem.Selected">
         <item name="android:textColor">@color/selected_item_color</item>
     </style>
-
 
 
 </resources>

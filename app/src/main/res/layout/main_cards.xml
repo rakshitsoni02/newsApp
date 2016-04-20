@@ -53,6 +53,7 @@
             <ImageView
                 android:id="@+id/epaper"
                 style="@style/ImageView.Hamburger"
+                android:visibility="gone"
                 android:layout_gravity="end"
                 android:src="@drawable/ic_epaper"/>
 
