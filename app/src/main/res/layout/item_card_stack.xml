@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    android:id="@+id/card_view"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="2dp"
@@ -13,8 +12,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:color/white"
-        >
+        android:background="@android:color/white">
 
         <LinearLayout
             android:id="@+id/header"
@@ -22,14 +20,13 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/footer"
             android:layout_alignParentTop="true"
-            android:orientation="vertical"
-            >
+            android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/image_content"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/placeholder_normal"/>
+                android:src="@drawable/placeholder_normal" />
 
             <TextView
                 android:id="@+id/tittle_content"
@@ -38,25 +35,30 @@
                 android:maxLines="2"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:text="Apple Music now has its own Android widget"
                 android:textColor="@color/dark_black"
-                android:textSize="@dimen/text_large_body"
-                />
+                android:textSize="@dimen/text_large_body" />
+
+            <TextView
+                android:id="@+id/date_updated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:maxLines="2"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textColor="@color/dark_black"
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/content_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="3dp"
                 android:autoLink="web"
-                android:maxLines="6"
                 android:padding="8dp"
                 android:scrollbars="vertical"
-                android:text=" Share on Facebook  Tweet  Share  Pin
-Home screen widgets still don't exist on iOS, but that's not stopping Apple from taking advantage of Android's unique strengths. Today the company updated its Apple Music app with a new widget that can be dropped onto your phone or tablet's home screen. It's pretty basic (most music app widgets are, to be fair), offering controls for pause, skip, and going back to the last track."
                 android:textColor="@color/text_secondry"
-                android:textSize="@dimen/text_body"
-                />
+                android:textSize="@dimen/text_body" />
 
 
         </LinearLayout>
@@ -65,8 +67,7 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
             android:id="@+id/footer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            >
+            android:layout_alignParentBottom="true">
 
             <ImageView
                 android:id="@+id/menu_option"
@@ -80,8 +81,7 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
                 android:background="@drawable/border_textview"
                 android:paddingLeft="8dp"
                 android:paddingRight="8dp"
-                android:src="@drawable/ic_action_fullscreen"
-                />
+                android:src="@drawable/ic_action_fullscreen" />
 
             <com.ghn.android.views.FontTextView
                 android:id="@+id/video_youtube"
@@ -100,8 +100,7 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
                 android:text="Watch Video"
                 android:textColor="@color/primary"
                 android:textSize="8sp"
-                android:visibility="invisible"
-                />
+                android:visibility="invisible" />
 
             <com.ghn.android.views.FontTextView
                 android:id="@+id/read_more"
@@ -118,8 +117,7 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
                 android:text="Read More"
                 android:textColor="@color/primary"
                 android:textSize="8sp"
-                android:visibility="visible"
-                />
+                android:visibility="visible" />
 
             <TextView
                 android:id="@+id/share_option"
@@ -137,8 +135,7 @@ Home screen widgets still don't exist on iOS, but that's not stopping Apple from
                 android:paddingRight="8dp"
                 android:text="Share"
                 android:textColor="@color/primary"
-                android:textSize="12sp"
-                />
+                android:textSize="12sp" />
 
 
         </RelativeLayout>

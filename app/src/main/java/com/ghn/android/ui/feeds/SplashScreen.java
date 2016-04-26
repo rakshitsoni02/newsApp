@@ -138,6 +138,7 @@ public class SplashScreen extends AppCompatActivity {
 
   private void navigateToMainScreen() {
     Intent i = new Intent(SplashScreen.this, com.ghn.android.ui.feeds.FeedsActivity.class);
+    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
     startActivity(i);
     // close this activity
     finish();

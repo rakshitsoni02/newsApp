@@ -27,6 +27,11 @@
             android:text="Global Herald"
             android:textColor="@color/white"
             android:textSize="22sp"/>
+        <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </ProgressBar>
     </LinearLayout>
 
 

@@ -233,6 +233,11 @@ public class FeedsActivity extends AppCompatActivity implements View.OnClickList
             setAllContent();
         progressBar.setVisibility(View.GONE);
         viewPager.setVisibility(View.VISIBLE);
+        try {
+            viewPager.setOffscreenPageLimit(4);
+        } catch (Exception e) {
+            //ignore
+        }
     }
 
     private void setUpGuillotineAnimation(View guillotineMenu) {
@@ -369,7 +374,7 @@ public class FeedsActivity extends AppCompatActivity implements View.OnClickList
     private void hitCreateNewsApi(Uri uri) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()
-                .url("http://amantran.xyz/api/uploadNews")
+                .url("http://216.158.225.126/~androidapp/index.php/api/uploadNews")
                 .post(createNews(uri))
                 .build();
         client.newCall(request).enqueue(new Callback() {

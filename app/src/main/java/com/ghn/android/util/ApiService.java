@@ -11,7 +11,8 @@ import okhttp3.Response;
 public class ApiService {
   public static final MediaType JSON
       = MediaType.parse("application/json; charset=utf-8");
-  String ENDPOINT = "http://amantran.xyz/api/";
+ // String ENDPOINT = "http://amantran.xyz/api/";
+  String ENDPOINT = "http://216.158.225.126/~androidapp/index.php/api/";
   RequestBody formBody;
 
   public ApiService(RequestBody formBody) {

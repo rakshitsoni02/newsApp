@@ -41,6 +41,8 @@ public class ContentFragment extends Fragment {
   FontTextView watchVideo;
   @Bind(R.id.content_desc)
   TextView content_desc;
+  @Bind(R.id.date_updated)
+  TextView dateUpdated;
   @Bind(R.id.image_content)
   ImageView imageNews;
   @Bind(R.id.card_view)
@@ -116,6 +118,7 @@ public class ContentFragment extends Fragment {
     content_desc.setMovementMethod(new ScrollingMovementMethod());
     final News news = (News) getArguments().getSerializable("news");
     tittle_content.setText(news.getTitle());
+    dateUpdated.setText(news.getUpdated_at());
     content_desc.setText(news.getDescription());
     if (!news.getNews_image().equals("")) {
       Picasso.with(this.getActivity())

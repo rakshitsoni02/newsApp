@@ -38,6 +38,7 @@
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
                 android:hint="Tittle"
                 android:inputType="text"/>
 
@@ -53,6 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Description"
+                android:textColor="@color/colorPrimary"
                 android:inputType="text"
                 android:maxLines="8"
                 android:singleLine="true"/>
@@ -68,6 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Phone Number"
+                android:textColor="@color/colorPrimary"
                 android:inputType="number"/>
 
         </android.support.design.widget.TextInputLayout>
