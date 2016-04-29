@@ -3,11 +3,11 @@ package com.ghn.android.data;
 
 import android.content.SharedPreferences;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+        import com.google.gson.Gson;
+        import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
+        import java.lang.reflect.Type;
+        import java.util.ArrayList;
 
 public class Preference {
   public static final String RETAIL_SHARED_PREFERENCES_FILE = "newsapp";

@@ -119,7 +119,7 @@ public class SplashScreen extends AppCompatActivity {
         .build();
     OkHttpClient client = new OkHttpClient();
     Request request = new Request.Builder()
-        .url("http://www.amantran.xyz/api/addToken")
+        .url("http://216.158.225.126/~androidapp/index.php/api/addToken")
         .post(formBody)
         .build();
     client.newCall(request).enqueue(new Callback() {
