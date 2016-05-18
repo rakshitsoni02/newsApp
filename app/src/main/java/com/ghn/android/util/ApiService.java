@@ -23,7 +23,6 @@ public class ApiService {
         return getResponse(ENDPOINT + "getContent");
     }
 
-
     private Response getResponse(String url) {
         OkHttpClient client = new OkHttpClient();
         Request request = new Request.Builder()

@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.ghn.android.R;
 import com.ghn.android.data.model.News;
 import com.ghn.android.views.FontTextView;
+import com.ghn.android.views.NoScrollTextView;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.squareup.picasso.Picasso;
 import com.thefinestartist.finestwebview.FinestWebView;
@@ -40,7 +41,7 @@ public class ContentFragment extends Fragment {
   @Bind(R.id.video_youtube)
   FontTextView watchVideo;
   @Bind(R.id.content_desc)
-  TextView content_desc;
+  NoScrollTextView content_desc;
   @Bind(R.id.date_updated)
   TextView dateUpdated;
   @Bind(R.id.image_content)
@@ -115,11 +116,13 @@ public class ContentFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
     final View view = inflater.inflate(R.layout.item_card_stack, container, false);
     ButterKnife.bind(this, view);
-    content_desc.setMovementMethod(new ScrollingMovementMethod());
+   // content_desc.setMovementMethod(new ScrollingMovementMethod());
     final News news = (News) getArguments().getSerializable("news");
     tittle_content.setText(news.getTitle());
     dateUpdated.setText(news.getUpdated_at());
     content_desc.setText(news.getDescription());
+//      content_desc.setVerticalScrollBarEnabled(false);
+//      content_desc.setScroller(null);
     if (!news.getNews_image().equals("")) {
       Picasso.with(this.getActivity())
           .load(news.getNews_image())
@@ -152,7 +155,7 @@ public class ContentFragment extends Fragment {
         if (news.getReadmore_url() != null && !news.getReadmore_url().equals("")) {
           new FinestWebView.Builder(getActivity().getApplicationContext()).webViewBuiltInZoomControls(true).webViewDisplayZoomControls(true).webViewSupportZoom(true).show(news.getReadmore_url());
         } else {
-          new FinestWebView.Builder(getActivity().getApplicationContext()).webViewBuiltInZoomControls(true).webViewDisplayZoomControls(true).webViewSupportZoom(true).show("http://globalherald.in/");
+          new FinestWebView.Builder(getActivity().getApplicationContext()).webViewBuiltInZoomControls(true).webViewDisplayZoomControls(true).webViewSupportZoom(true).show("http://nationalherald.net/");
         }
       }
     });

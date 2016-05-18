@@ -198,7 +198,6 @@ public class FeedsActivity extends AppCompatActivity implements View.OnClickList
         feedsAdapter = new com.ghn.android.ui.feeds.FeedsAdapter(getSupportFragmentManager(), fragments);
         viewPager.setAdapter(feedsAdapter);
         viewPager.setOverScrollMode(View.OVER_SCROLL_NEVER);
-        viewPager.setOffscreenPageLimit(3);
         viewPager.setPageTransformer(true, new DepthPageTransformer());
         View guillotineMenu = LayoutInflater.from(this).inflate(R.layout.drawer_items_menu, null);
         expandablePanel = (com.ghn.android.views.ExpandablePanel) guillotineMenu.findViewById(R.id.expadable_panel);
@@ -456,7 +455,7 @@ public class FeedsActivity extends AppCompatActivity implements View.OnClickList
         removeFragmentsFromPager();
         for (int i = 0; i < listAllContent.size(); i++) {
             com.ghn.android.data.model.News news = listAllContent.get(i);
-            fragments.add(com.ghn.android.ui.feeds.ContentFragment.newInstance(news, i));
+            fragments.add(ContentFragment.newInstance(news, i));
         }
         feedsAdapter.notifyDataSetChanged();
     }

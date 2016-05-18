@@ -49,14 +49,13 @@
                 android:textColor="@color/dark_black"
                 android:textSize="12dp" />
 
-            <TextView
+            <com.ghn.android.views.NoScrollTextView
                 android:id="@+id/content_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
                 android:autoLink="web"
                 android:padding="8dp"
-                android:scrollbars="vertical"
                 android:textColor="@color/text_secondry"
                 android:textSize="@dimen/text_body" />
 

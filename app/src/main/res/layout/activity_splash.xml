@@ -24,7 +24,7 @@
             android:layout_alignParentBottom="true"
             android:layout_below="@+id/imgLogo"
             android:gravity="center_horizontal"
-            android:text="Global Herald"
+            android:text="@string/app_name"
             android:textColor="@color/white"
             android:textSize="22sp"/>
         <ProgressBar
@@ -41,7 +41,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
         android:gravity="center_horizontal"
-        android:text="www.globalherald.in"
+        android:text="@string/web_link"
         android:textColor="@color/white"
         android:textSize="14sp"/>
 
